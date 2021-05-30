@@ -150,8 +150,6 @@ Description: This template is made for user, who will work on react as frontend 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Neusic</title>
 
-        {% load static %}
-
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <link
         rel="stylesheet"
