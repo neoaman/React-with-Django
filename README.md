@@ -2,9 +2,9 @@
 Description: This template is made for user, who will work on react as frontend development and django as backend development.   
 
 ## Installations   
-- npm v 6.14.4   
+- npm v 6.14.13   
 - python v3.8.5   
-- node  
+- node  v14.17.0
 
 ## Setup Django   
 - Create virtual environment and install the required packages   
@@ -138,7 +138,7 @@ Description: This template is made for user, who will work on react as frontend 
     "build": "webpack --mode production && echo yes | python manage.py collectstatic",
     "collect":"python manage.py collectstatic",
     "server":"python manage.py runserver"
-  },
+  }
   ```   
 - Modify **index.html** inside **frontend/templates/frontend/index.html**   
     ```html
@@ -182,7 +182,7 @@ Description: This template is made for user, who will work on react as frontend 
     }
 
     render() {
-        return <h1>Testing React Code</h1>;
+        return <h1>Testing React Code</h1>
     }
     }
 
