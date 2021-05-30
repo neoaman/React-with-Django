@@ -155,8 +155,8 @@ Description: This template is made for user, who will work on react as frontend 
         rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
         />
-        <link rel="stylesheet" type="text/css" href="{% static "css/index.css" %}"
-        />
+        <link rel="stylesheet" type="text/css" href="static/css/index.css"
+        /> <!-- Please Load using using jinja template static tag see the README.md -->
 
     </head>
     <body>
@@ -164,7 +164,7 @@ Description: This template is made for user, who will work on react as frontend 
         <div id="app"></div>
         </div>
 
-    <script src="{% static "frontend/main.js" %}"></script>
+    <script src="static/frontend/main.js"></script> <!-- Please Load using using jinja template static tag -->
         
     </body>
     </html>
