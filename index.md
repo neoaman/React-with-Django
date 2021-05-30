@@ -2,9 +2,9 @@
 Description: This template is made for user, who will work on react as frontend development and django as backend development.   
 
 ## Installations   
-- npm v 6.14.4   
+- npm v 6.14.13   
 - python v3.8.5   
-- node  
+- node  v14.17.0
 
 ## Setup Django   
 - Create virtual environment and install the required packages   
@@ -19,7 +19,7 @@ Description: This template is made for user, who will work on react as frontend 
   - `SECRET_KEY = 'my|x|secret|x|key|xxxxxxxxx|'` Your Django secret key
   - `DEBUG = 'True'` For production make it False
   - `ALLOWED_HOSTS = '123.456.78.9'` Add your hosted IP
-- Set settings.py
+- Set [settings.py](https://github.com/neoaman/React-with-Django/blob/main/control/settings.py)
   - Import packages and add param through the .env file
     ```py
     import os
@@ -78,7 +78,7 @@ Description: This template is made for user, who will work on react as frontend 
   - `npm i react react-dom react-router-dom --save-dev` React    
   - `npm i @material-ui/core @material-ui/icons @material-ui/lab --save-dev` Material UI   
   - `npm i @babel/plugin-proposal-class-properties --save-dev` Async and Await   
-- Create new file **babel.config.json** inside frontend   
+- Create new file **[babel.config.json](https://github.com/neoaman/React-with-Django/blob/main/babel.config.json)** inside frontend   
     ```json
     {
         "presets": [
@@ -95,7 +95,7 @@ Description: This template is made for user, who will work on react as frontend 
         "plugins": ["@babel/plugin-proposal-class-properties"]
     }
     ```   
-- Create another file **webpack.config.js**   
+- Create another file **[webpack.config.js](https://github.com/neoaman/React-with-Django/blob/main/webpack.config.js)**   
     ```js
     const path = require("path");
     const webpack = require("webpack");
@@ -129,7 +129,7 @@ Description: This template is made for user, who will work on react as frontend 
     };
 
     ```   
-- Modify the **package.json**   
+- Modify the **[package.json](https://github.com/neoaman/React-with-Django/blob/main/package.json)**   
   - modify **script**   
   ```json
   "scripts": {
@@ -138,9 +138,9 @@ Description: This template is made for user, who will work on react as frontend 
     "build": "webpack --mode production && echo yes | python manage.py collectstatic",
     "collect":"python manage.py collectstatic",
     "server":"python manage.py runserver"
-  },
+  }
   ```   
-- Modify **index.html** inside **frontend/templates/frontend/index.html**   
+- Modify **[index.html](https://github.com/neoaman/React-with-Django/blob/main/frontend/templates/frontend/index.html)** inside **frontend/templates/frontend/index.html**   
     ```html
     <!DOCTYPE html>
     <html lang="en">
@@ -150,13 +150,15 @@ Description: This template is made for user, who will work on react as frontend 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Neusic</title>
 
+        <!-- load static with template tag -->
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <link
         rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
         />
         <link rel="stylesheet" type="text/css" href="static/css/index.css"
-        /> <!-- Please Load using using jinja template static tag see the README.md -->
+        />
 
     </head>
     <body>
@@ -164,12 +166,12 @@ Description: This template is made for user, who will work on react as frontend 
         <div id="app"></div>
         </div>
 
-    <script src="static/frontend/main.js"></script> <!-- Please Load using using jinja template static tag -->
+    <script src="static/frontend/main.js"></script>
         
     </body>
     </html>
     ```   
-- Modify **App.js** which is inside src/components.   
+- Modify **[App.js](https://github.com/neoaman/React-with-Django/blob/main/frontend/src/components/App.js)** which is inside src/components.   
     ```js
     import React, { Component } from "react";
     import { render } from "react-dom";
@@ -180,26 +182,26 @@ Description: This template is made for user, who will work on react as frontend 
     }
 
     render() {
-        return <h1>Testing React Code</h1>;
+        return <h1>Testing React Code</h1>
     }
     }
 
     const appDiv = document.getElementById('app');
     render(<App/>,appDiv);
     ```   
-- Modify **index.js**.   
+- Modify **[index.js](https://github.com/neoaman/React-with-Django/blob/main/frontend/src/index.js)**.   
     ```js
     import App from "./components/App";
     ```   
 ## Rendering The Frontend   
-- Modify the [views.py](frontend/views.py) from frontend   
+- Modify the [views.py](https://github.com/neoaman/React-with-Django/blob/main/frontend/views.py) from frontend   
     ```py
     from django.shortcuts import render
     # Create your views here.
     def home(request):
         return render(request,'frontend/index.html')
     ```
-- Modify [urls.py](frontend/urls.py) from frontend *(if unavailable create one)   
+- Modify [urls.py](https://github.com/neoaman/React-with-Django/blob/main/frontend/urls.py) from frontend *(if unavailable create one)*   
     ```py
     from django.contrib import admin
     from django.urls import path,re_path
@@ -211,7 +213,7 @@ Description: This template is made for user, who will work on react as frontend 
         re_path(r'^(?:.*)/?$', home), # Path for the frontend Other pages
     ]
     ```   
-- Modify [urls.py](control/urls.py) from project folder   
+- Modify [urls.py](https://github.com/neoaman/React-with-Django/blob/main/control/urls.py) from project folder   
     ```py
     from django.contrib import admin
     from django.urls import path,include,re_path
@@ -228,3 +230,4 @@ Description: This template is made for user, who will work on react as frontend 
         re_path(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}),
     ]
     ```
+
